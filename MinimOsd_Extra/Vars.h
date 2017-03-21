@@ -112,6 +112,7 @@ static uint16_t     temperature = 0;  // temp*100
 
 static uint16_t      remaining_estimated_flight_time_seconds = 0;
 static uint8_t       osd_mode = 0;                   // Navigation mode from RC AC2 = CH5, APM = CH8
+static uint8_t		 prev_osd_mode = 100;
 
 static unsigned long timer_20ms = 0;
 static unsigned long timer_100ms = 0;

@@ -514,6 +514,8 @@ void loop()
     if( lflags.need_redraw &&  !vsync_wait) { // сразу после прерывания дабы успеть закончить расчет к следующему
         lflags.need_redraw=0; // экран перерисован
 
+		setModeChangedMessage();
+		
         setHomeVars();   // calculate and set Distance from home and Direction to home
 
         setFdataVars();  // накопление статистики и рекордов

@@ -233,6 +233,45 @@ next_panel:
 }
 
 
+static void setModeChangedMessage()
+{
+	if (osd_mode != prev_osd_mode)
+	{
+		prev_osd_mode = osd_mode;
+		
+		if (osd_mode == 0  //STAB
+			|| osd_mode == 6 // RTL
+			|| osd_mode == 9 // LAND
+			) {
+				static const char msg[] PROGMEM = "fl mode warning";
+
+				const char *cp;
+				byte *wp;
+				for(cp=msg, wp=mav_message;;){
+					byte c=pgm_read_byte(cp++);
+					*wp++ = c;
+					if(c==0) break;
+				}
+			
+				mav_message_start(sizeof(msg)-1, 6); // len, time
+			}
+			else
+			{
+				static const char msg[] PROGMEM = "fl mode changed";
+
+				const char *cp;
+				byte *wp;
+				for(cp=msg, wp=mav_message;;){
+					byte c=pgm_read_byte(cp++);
+					*wp++ = c;
+					if(c==0) break;
+				}
+			
+				mav_message_start(sizeof(msg)-1, 3); // len, time
+			}
+	}
+}
+
 
 //------------------ Battery Remaining Picture ----------------------------------
 
