@@ -1185,7 +1185,8 @@ static void panBatt_B(point p){
 
 static void panPower(point p){
 	    // calced in func.h
-    osd_printf_1(f3_0f, power);
+    //osd_printf_1(f3_0f, power);
+	osd_printi_1(f2i, osd_battery_remaining_A);  
 }
 
 
