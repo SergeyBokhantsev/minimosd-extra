@@ -465,6 +465,7 @@ namespace OSD {
             cbxRSSIChannel.SelectedIndex = rssi_decode((int)(pan.rssiraw_on));
 
             OVERSPEED_numeric.Value = pan.overspeed;
+            VIBE_numeric.Value = pan.vibe_treshold;
 
             if (cbxModelType.Items.Count == 0)
                 cbxModelType.DataSource = Enum.GetValues(typeof(ModelType));
@@ -945,6 +946,7 @@ namespace OSD {
                 //conf.eeprom.sets.auto_screen_switch = pan.auto_screen_switch;
 
                 conf.eeprom.sets.overspeed = pan.overspeed;
+                conf.eeprom.sets.vibe_treshold = pan.vibe_treshold;
                 conf.eeprom.sets.stall = pan.stall;
                 conf.eeprom.sets.battv = pan.battv;
 
@@ -1184,6 +1186,7 @@ namespace OSD {
             conf.eeprom.flags[converts] = pan.converts;
 
             conf.eeprom.sets.overspeed = pan.overspeed;
+            conf.eeprom.sets.vibe_treshold = pan.vibe_treshold;
             conf.eeprom.sets.stall = pan.stall;
             conf.eeprom.sets.battv = pan.battv;
 
@@ -1467,6 +1470,9 @@ as_checkbox:
                 } catch {
                     OVERSPEED_numeric.Value = 0;
                 }
+
+                pan.vibe_treshold = conf.eeprom.sets.vibe_treshold;
+                VIBE_numeric.Value = conf.eeprom.sets.vibe_treshold;
 
                 try {
                     pan.stall = conf.eeprom.sets.stall;
@@ -1860,6 +1866,7 @@ as_checkbox:
                         sw.WriteLine("{0}\t{1}", "Model Type", (byte)(ModelType)cbxModelType.SelectedItem); //We're just saving what's in the config screen, not the eeprom model type
                         sw.WriteLine("{0}\t{1}", "Units", UNITS_combo.SelectedIndex);
                         sw.WriteLine("{0}\t{1}", "Overspeed", pan.overspeed);
+                        sw.WriteLine("{0}\t{1}", "VibeTr", pan.vibe_treshold);
                         sw.WriteLine("{0}\t{1}", "Stall", pan.stall);
                         sw.WriteLine("{0}\t{1}", "Battery", pan.battv);
                         sw.WriteLine("{0}\t{1}", "RSSI High", pan.rssical);
@@ -2072,6 +2079,8 @@ again:
                             } 
                         else if (strings[0] == "Overspeed")
                             pan.overspeed = byte.Parse(strings[1]);
+                        else if (strings[0] == "VibeTr")
+                            pan.vibe_treshold = byte.Parse(strings[1]);
                         else if (strings[0] == "Stall") pan.stall = byte.Parse(strings[1]);
                         else if (strings[0] == "Battery") pan.battv = byte.Parse(strings[1]);
                         else if (strings[0] == "RSSI High")
@@ -2167,6 +2176,7 @@ again:
 
                     OVERSPEED_numeric.Value = pan.overspeed;
                     STALL_numeric.Value = pan.stall;
+                    VIBE_numeric.Value = pan.vibe_treshold;
                     MINVOLT_numeric.Value = Convert.ToDecimal(pan.battv) / Convert.ToDecimal(10.0);
 
                     //RSSI_numeric_max.Value = pan.rssical;
@@ -4915,13 +4925,9 @@ typedef struct __mavlink_radio_status_t
 
         }
 
-        
-
-        
-
-        
-    
-
-
+        private void VIBE_numeric_ValueChanged(object sender, EventArgs e)
+        {
+            pan.vibe_treshold = (byte)VIBE_numeric.Value;
+        }
     }
 }

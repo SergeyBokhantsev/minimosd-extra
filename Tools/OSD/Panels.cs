@@ -91,7 +91,9 @@ namespace OSD
 		public byte pwm_dst=0;
 		
 		public byte n_screens=4;
-		
+
+        public byte vibe_treshold = 20;
+
 //*************************		
         private byte temperatureChar = 0xBA;
         private byte bigDistanceChar = 0x1B;

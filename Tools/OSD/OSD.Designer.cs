@@ -198,6 +198,8 @@ namespace OSD
             this.BUT_CopyScreen = new System.Windows.Forms.Button();
             this.BUT_ClearScreen = new System.Windows.Forms.Button();
             this.hint = new System.Windows.Forms.ToolTip(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.VIBE_numeric = new System.Windows.Forms.NumericUpDown();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.PANEL_tabs.SuspendLayout();
@@ -226,22 +228,23 @@ namespace OSD
             this.grpTLog.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VIBE_numeric)).BeginInit();
             this.SuspendLayout();
             // 
             // CMB_ComPort
             // 
             this.CMB_ComPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CMB_ComPort.FormattingEnabled = true;
-            this.CMB_ComPort.Location = new System.Drawing.Point(330, 510);
+            this.CMB_ComPort.Location = new System.Drawing.Point(604, 550);
             this.CMB_ComPort.Name = "CMB_ComPort";
-            this.CMB_ComPort.Size = new System.Drawing.Size(98, 21);
+            this.CMB_ComPort.Size = new System.Drawing.Size(98, 24);
             this.CMB_ComPort.TabIndex = 4;
             this.CMB_ComPort.Click += new System.EventHandler(this.comboBox1_Click);
             // 
             // BUT_ReadOSD
             // 
             this.BUT_ReadOSD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BUT_ReadOSD.Location = new System.Drawing.Point(434, 508);
+            this.BUT_ReadOSD.Location = new System.Drawing.Point(708, 548);
             this.BUT_ReadOSD.Name = "BUT_ReadOSD";
             this.BUT_ReadOSD.Size = new System.Drawing.Size(100, 23);
             this.BUT_ReadOSD.TabIndex = 6;
@@ -252,7 +255,7 @@ namespace OSD
             // BUT_WriteOSD
             // 
             this.BUT_WriteOSD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BUT_WriteOSD.Location = new System.Drawing.Point(540, 508);
+            this.BUT_WriteOSD.Location = new System.Drawing.Point(814, 548);
             this.BUT_WriteOSD.Name = "BUT_WriteOSD";
             this.BUT_WriteOSD.Size = new System.Drawing.Size(148, 23);
             this.BUT_WriteOSD.TabIndex = 2;
@@ -262,12 +265,13 @@ namespace OSD
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 536);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 576);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(688, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(962, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -283,6 +287,7 @@ namespace OSD
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.videoModeToolStripMenuItem,
@@ -290,7 +295,7 @@ namespace OSD
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(688, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(962, 28);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -304,7 +309,7 @@ namespace OSD
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // saveToFileToolStripMenuItem
@@ -312,7 +317,7 @@ namespace OSD
             this.saveToFileToolStripMenuItem.Image = global::OSD.Properties.Resources.saveHS;
             this.saveToFileToolStripMenuItem.Name = "saveToFileToolStripMenuItem";
             this.saveToFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToFileToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.saveToFileToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.saveToFileToolStripMenuItem.Text = "Save OSD file...";
             this.saveToFileToolStripMenuItem.Click += new System.EventHandler(this.saveToFileToolStripMenuItem_Click);
             // 
@@ -321,32 +326,32 @@ namespace OSD
             this.loadFromFileToolStripMenuItem.Image = global::OSD.Properties.Resources.openHS;
             this.loadFromFileToolStripMenuItem.Name = "loadFromFileToolStripMenuItem";
             this.loadFromFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.loadFromFileToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.loadFromFileToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.loadFromFileToolStripMenuItem.Text = "Open OSD File...";
             this.loadFromFileToolStripMenuItem.Click += new System.EventHandler(this.loadFromFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(240, 6);
             // 
             // loadDefaultsToolStripMenuItem
             // 
             this.loadDefaultsToolStripMenuItem.Name = "loadDefaultsToolStripMenuItem";
-            this.loadDefaultsToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.loadDefaultsToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.loadDefaultsToolStripMenuItem.Text = "Load Defaults";
             this.loadDefaultsToolStripMenuItem.Click += new System.EventHandler(this.loadDefaultsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(240, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -357,14 +362,14 @@ namespace OSD
             this.CHK_pal,
             this.CHK_auto});
             this.videoModeToolStripMenuItem.Name = "videoModeToolStripMenuItem";
-            this.videoModeToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.videoModeToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.videoModeToolStripMenuItem.Text = "Video Mode";
             // 
             // CHK_ntsc
             // 
             this.CHK_ntsc.CheckOnClick = true;
             this.CHK_ntsc.Name = "CHK_ntsc";
-            this.CHK_ntsc.Size = new System.Drawing.Size(111, 22);
+            this.CHK_ntsc.Size = new System.Drawing.Size(120, 26);
             this.CHK_ntsc.Text = "NTSC";
             this.CHK_ntsc.CheckStateChanged += new System.EventHandler(this.nTSCToolStripMenuItem_CheckStateChanged);
             this.CHK_ntsc.Click += new System.EventHandler(this.CHK_ntsc_Click);
@@ -375,7 +380,7 @@ namespace OSD
             this.CHK_pal.CheckOnClick = true;
             this.CHK_pal.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CHK_pal.Name = "CHK_pal";
-            this.CHK_pal.Size = new System.Drawing.Size(111, 22);
+            this.CHK_pal.Size = new System.Drawing.Size(120, 26);
             this.CHK_pal.Text = "PAL";
             this.CHK_pal.CheckedChanged += new System.EventHandler(this.CHK_pal_CheckedChanged);
             this.CHK_pal.CheckStateChanged += new System.EventHandler(this.pALToolStripMenuItem_CheckStateChanged);
@@ -384,7 +389,7 @@ namespace OSD
             // CHK_auto
             // 
             this.CHK_auto.Name = "CHK_auto";
-            this.CHK_auto.Size = new System.Drawing.Size(111, 22);
+            this.CHK_auto.Size = new System.Drawing.Size(120, 26);
             this.CHK_auto.Text = "Auto";
             this.CHK_auto.CheckStateChanged += new System.EventHandler(this.AUTOToolStripMenuItem_CheckStateChanged);
             this.CHK_auto.Click += new System.EventHandler(this.CHK_auto_Click);
@@ -407,7 +412,7 @@ namespace OSD
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
             this.optionsToolStripMenuItem.ShowShortcutKeys = false;
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // checkBox1
@@ -416,14 +421,14 @@ namespace OSD
             this.checkBox1.CheckOnClick = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(233, 22);
+            this.checkBox1.Size = new System.Drawing.Size(277, 26);
             this.checkBox1.Text = "Show Grid";
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // resetEepromToolStripMenuItem
             // 
             this.resetEepromToolStripMenuItem.Name = "resetEepromToolStripMenuItem";
-            this.resetEepromToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.resetEepromToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.resetEepromToolStripMenuItem.Text = "Reset EEPROM";
             this.resetEepromToolStripMenuItem.ToolTipText = "Initialize EEPROM with default values";
             this.resetEepromToolStripMenuItem.Click += new System.EventHandler(this.BUT_ResetOSD_EEPROM_click);
@@ -431,7 +436,7 @@ namespace OSD
             // updateFirmwareToolStripMenuItem
             // 
             this.updateFirmwareToolStripMenuItem.Name = "updateFirmwareToolStripMenuItem";
-            this.updateFirmwareToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.updateFirmwareToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.updateFirmwareToolStripMenuItem.Text = "Update Firmware...";
             this.updateFirmwareToolStripMenuItem.ToolTipText = "Re-Flash the OSD with a new firmware image";
             this.updateFirmwareToolStripMenuItem.Click += new System.EventHandler(this.updateFirmwareToolStripMenuItem_Click);
@@ -439,14 +444,14 @@ namespace OSD
             // customBGPictureToolStripMenuItem
             // 
             this.customBGPictureToolStripMenuItem.Name = "customBGPictureToolStripMenuItem";
-            this.customBGPictureToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.customBGPictureToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.customBGPictureToolStripMenuItem.Text = "Background Image...";
             this.customBGPictureToolStripMenuItem.Click += new System.EventHandler(this.customBGPictureToolStripMenuItem_Click);
             // 
             // sendTLogToolStripMenuItem
             // 
             this.sendTLogToolStripMenuItem.Name = "sendTLogToolStripMenuItem";
-            this.sendTLogToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.sendTLogToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.sendTLogToolStripMenuItem.Text = "Load TLog.";
             this.sendTLogToolStripMenuItem.ToolTipText = "Load a Mavlink transmission log to play into the OSD to test the layout";
             this.sendTLogToolStripMenuItem.Click += new System.EventHandler(this.sendTLogToolStripMenuItem_Click);
@@ -454,7 +459,7 @@ namespace OSD
             // connectComPortToolStripMenuItem
             // 
             this.connectComPortToolStripMenuItem.Name = "connectComPortToolStripMenuItem";
-            this.connectComPortToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.connectComPortToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.connectComPortToolStripMenuItem.Text = "Connect to COM port";
             this.connectComPortToolStripMenuItem.ToolTipText = "Transmit all data from selected port to OSD to test how it works";
             this.connectComPortToolStripMenuItem.Click += new System.EventHandler(this.connectComPortToolStripMenuItem_Click);
@@ -462,7 +467,7 @@ namespace OSD
             // updateFontToolStripMenuItem
             // 
             this.updateFontToolStripMenuItem.Name = "updateFontToolStripMenuItem";
-            this.updateFontToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.updateFontToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.updateFontToolStripMenuItem.Text = "Update CharSet...";
             this.updateFontToolStripMenuItem.ToolTipText = "Update the font file on the OSD";
             this.updateFontToolStripMenuItem.Click += new System.EventHandler(this.updateFontToolStripMenuItem_Click);
@@ -470,7 +475,7 @@ namespace OSD
             // updateCharsetDevToolStripMenuItem
             // 
             this.updateCharsetDevToolStripMenuItem.Name = "updateCharsetDevToolStripMenuItem";
-            this.updateCharsetDevToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.updateCharsetDevToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.updateCharsetDevToolStripMenuItem.Text = "Update Charset (Dev)...";
             this.updateCharsetDevToolStripMenuItem.Visible = false;
             this.updateCharsetDevToolStripMenuItem.Click += new System.EventHandler(this.updateCharsetDevToolStripMenuItem_Click);
@@ -478,7 +483,7 @@ namespace OSD
             // updateCharsetcustomFwToolStripMenuItem
             // 
             this.updateCharsetcustomFwToolStripMenuItem.Name = "updateCharsetcustomFwToolStripMenuItem";
-            this.updateCharsetcustomFwToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.updateCharsetcustomFwToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.updateCharsetcustomFwToolStripMenuItem.Text = "Update Charset (custom fw)...";
             this.updateCharsetcustomFwToolStripMenuItem.Visible = false;
             this.updateCharsetcustomFwToolStripMenuItem.Click += new System.EventHandler(this.updateCharsetcustomFwToolStripMenuItem_Click);
@@ -486,7 +491,7 @@ namespace OSD
             // presentCustomCharsetToolStripMenuItem
             // 
             this.presentCustomCharsetToolStripMenuItem.Name = "presentCustomCharsetToolStripMenuItem";
-            this.presentCustomCharsetToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.presentCustomCharsetToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.presentCustomCharsetToolStripMenuItem.Text = "Show Custom Charset...";
             this.presentCustomCharsetToolStripMenuItem.Click += new System.EventHandler(this.presentCustomCharsetToolStripMenuItem_Click);
             // 
@@ -494,14 +499,14 @@ namespace OSD
             // 
             this.MavlinkModeMenuItem.CheckOnClick = true;
             this.MavlinkModeMenuItem.Name = "MavlinkModeMenuItem";
-            this.MavlinkModeMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.MavlinkModeMenuItem.Size = new System.Drawing.Size(277, 26);
             this.MavlinkModeMenuItem.Text = "MAVlink mode";
             this.MavlinkModeMenuItem.CheckedChanged += new System.EventHandler(this.MavlinkModeMenuItem_Click);
             // 
             // getFwFromOSDToolStripMenuItem
             // 
             this.getFwFromOSDToolStripMenuItem.Name = "getFwFromOSDToolStripMenuItem";
-            this.getFwFromOSDToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.getFwFromOSDToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.getFwFromOSDToolStripMenuItem.Text = "GetFwFromOSD...";
             this.getFwFromOSDToolStripMenuItem.Visible = false;
             this.getFwFromOSDToolStripMenuItem.Click += new System.EventHandler(this.getFwFromOSDToolStripMenuItem_Click);
@@ -512,20 +517,20 @@ namespace OSD
             this.gettingStartedToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // gettingStartedToolStripMenuItem
             // 
             this.gettingStartedToolStripMenuItem.Name = "gettingStartedToolStripMenuItem";
-            this.gettingStartedToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.gettingStartedToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.gettingStartedToolStripMenuItem.Text = "Getting started";
             this.gettingStartedToolStripMenuItem.Click += new System.EventHandler(this.gettingStartedToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.aboutToolStripMenuItem.Text = "About ";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -536,7 +541,7 @@ namespace OSD
             this.PANEL_tabs.Margin = new System.Windows.Forms.Padding(2);
             this.PANEL_tabs.Name = "PANEL_tabs";
             this.PANEL_tabs.SelectedIndex = 0;
-            this.PANEL_tabs.Size = new System.Drawing.Size(687, 407);
+            this.PANEL_tabs.Size = new System.Drawing.Size(923, 435);
             this.PANEL_tabs.TabIndex = 0;
             this.PANEL_tabs.Selected += new System.Windows.Forms.TabControlEventHandler(this.PANEL_tabs_Selected);
             // 
@@ -561,11 +566,11 @@ namespace OSD
             this.tabPageConfig.Controls.Add(this.groupBox4);
             this.tabPageConfig.Controls.Add(this.groupBox3);
             this.tabPageConfig.Controls.Add(this.groupBoxRSSI);
-            this.tabPageConfig.Location = new System.Drawing.Point(4, 22);
+            this.tabPageConfig.Location = new System.Drawing.Point(4, 25);
             this.tabPageConfig.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageConfig.Name = "tabPageConfig";
             this.tabPageConfig.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPageConfig.Size = new System.Drawing.Size(679, 381);
+            this.tabPageConfig.Size = new System.Drawing.Size(915, 406);
             this.tabPageConfig.TabIndex = 1;
             this.tabPageConfig.Text = "Config";
             this.tabPageConfig.UseVisualStyleBackColor = true;
@@ -573,9 +578,9 @@ namespace OSD
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(492, 337);
+            this.label45.Location = new System.Drawing.Point(686, 337);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(31, 13);
+            this.label45.Size = new System.Drawing.Size(40, 17);
             this.label45.TabIndex = 26;
             this.label45.Text = "Units";
             // 
@@ -586,10 +591,10 @@ namespace OSD
             this.UNITS_combo.Items.AddRange(new object[] {
             "Metric",
             "Imperial"});
-            this.UNITS_combo.Location = new System.Drawing.Point(553, 334);
+            this.UNITS_combo.Location = new System.Drawing.Point(747, 334);
             this.UNITS_combo.Margin = new System.Windows.Forms.Padding(2);
             this.UNITS_combo.Name = "UNITS_combo";
-            this.UNITS_combo.Size = new System.Drawing.Size(109, 21);
+            this.UNITS_combo.Size = new System.Drawing.Size(109, 24);
             this.UNITS_combo.TabIndex = 25;
             this.UNITS_combo.SelectedIndexChanged += new System.EventHandler(this.UNITS_combo_SelectedIndexChanged);
             // 
@@ -598,11 +603,11 @@ namespace OSD
             this.CALLSIGNmaskedText.AllowPromptAsInput = false;
             this.CALLSIGNmaskedText.AsciiOnly = true;
             this.CALLSIGNmaskedText.BeepOnError = true;
-            this.CALLSIGNmaskedText.Location = new System.Drawing.Point(553, 359);
+            this.CALLSIGNmaskedText.Location = new System.Drawing.Point(747, 359);
             this.CALLSIGNmaskedText.Margin = new System.Windows.Forms.Padding(2);
             this.CALLSIGNmaskedText.Mask = "CCCCCCCC";
             this.CALLSIGNmaskedText.Name = "CALLSIGNmaskedText";
-            this.CALLSIGNmaskedText.Size = new System.Drawing.Size(109, 20);
+            this.CALLSIGNmaskedText.Size = new System.Drawing.Size(109, 22);
             this.CALLSIGNmaskedText.TabIndex = 24;
             this.CALLSIGNmaskedText.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.CALLSIGNmaskedText_MaskInputRejected);
             this.CALLSIGNmaskedText.Validating += new System.ComponentModel.CancelEventHandler(this.CALLSIGNmaskedText_Validating);
@@ -611,15 +616,15 @@ namespace OSD
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(492, 362);
+            this.label44.Location = new System.Drawing.Point(686, 362);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(48, 13);
+            this.label44.Size = new System.Drawing.Size(63, 17);
             this.label44.TabIndex = 23;
             this.label44.Text = "Call Sign";
             // 
             // timeOffset
             // 
-            this.timeOffset.Location = new System.Drawing.Point(615, 305);
+            this.timeOffset.Location = new System.Drawing.Point(809, 305);
             this.timeOffset.Maximum = new decimal(new int[] {
             12,
             0,
@@ -631,25 +636,25 @@ namespace OSD
             0,
             -2147483648});
             this.timeOffset.Name = "timeOffset";
-            this.timeOffset.Size = new System.Drawing.Size(47, 20);
+            this.timeOffset.Size = new System.Drawing.Size(47, 22);
             this.timeOffset.TabIndex = 22;
             this.timeOffset.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(492, 307);
+            this.label42.Location = new System.Drawing.Point(686, 307);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(109, 13);
+            this.label42.Size = new System.Drawing.Size(145, 17);
             this.label42.TabIndex = 21;
             this.label42.Text = "Time offset from GMT";
             // 
             // chkILS
             // 
             this.chkILS.AutoSize = true;
-            this.chkILS.Location = new System.Drawing.Point(632, 292);
+            this.chkILS.Location = new System.Drawing.Point(826, 292);
             this.chkILS.Name = "chkILS";
-            this.chkILS.Size = new System.Drawing.Size(70, 17);
+            this.chkILS.Size = new System.Drawing.Size(86, 21);
             this.chkILS.TabIndex = 1;
             this.chkILS.Text = "show ILS";
             this.chkILS.UseVisualStyleBackColor = true;
@@ -659,9 +664,9 @@ namespace OSD
             // chkTrack
             // 
             this.chkTrack.AutoSize = true;
-            this.chkTrack.Location = new System.Drawing.Point(613, 315);
+            this.chkTrack.Location = new System.Drawing.Point(807, 315);
             this.chkTrack.Name = "chkTrack";
-            this.chkTrack.Size = new System.Drawing.Size(72, 17);
+            this.chkTrack.Size = new System.Drawing.Size(89, 21);
             this.chkTrack.TabIndex = 4;
             this.chkTrack.Text = "with track";
             this.chkTrack.UseVisualStyleBackColor = true;
@@ -671,9 +676,9 @@ namespace OSD
             // chkFlightResults
             // 
             this.chkFlightResults.AutoSize = true;
-            this.chkFlightResults.Location = new System.Drawing.Point(491, 284);
+            this.chkFlightResults.Location = new System.Drawing.Point(685, 284);
             this.chkFlightResults.Name = "chkFlightResults";
-            this.chkFlightResults.Size = new System.Drawing.Size(135, 17);
+            this.chkFlightResults.Size = new System.Drawing.Size(177, 21);
             this.chkFlightResults.TabIndex = 0;
             this.chkFlightResults.Text = "Show results after flight";
             this.chkFlightResults.UseVisualStyleBackColor = true;
@@ -685,7 +690,7 @@ namespace OSD
             this.groupBox14.Controls.Add(this.label19);
             this.groupBox14.Controls.Add(this.label18);
             this.groupBox14.Controls.Add(this.cbCurrentSoure);
-            this.groupBox14.Location = new System.Drawing.Point(327, 160);
+            this.groupBox14.Location = new System.Drawing.Point(521, 160);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(158, 83);
             this.groupBox14.TabIndex = 20;
@@ -696,7 +701,7 @@ namespace OSD
             // 
             this.txtCurr_k.Location = new System.Drawing.Point(100, 52);
             this.txtCurr_k.Name = "txtCurr_k";
-            this.txtCurr_k.Size = new System.Drawing.Size(49, 20);
+            this.txtCurr_k.Size = new System.Drawing.Size(49, 22);
             this.txtCurr_k.TabIndex = 21;
             this.txtCurr_k.Text = "1";
             this.txtCurr_k.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -708,7 +713,7 @@ namespace OSD
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(9, 55);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 13);
+            this.label19.Size = new System.Drawing.Size(108, 17);
             this.label19.TabIndex = 20;
             this.label19.Text = "Adjust pin value";
             // 
@@ -717,7 +722,7 @@ namespace OSD
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(7, 27);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(34, 13);
+            this.label18.Size = new System.Drawing.Size(43, 17);
             this.label18.TabIndex = 19;
             this.label18.Text = "Input:";
             // 
@@ -730,7 +735,7 @@ namespace OSD
             "Pin Current"});
             this.cbCurrentSoure.Location = new System.Drawing.Point(51, 22);
             this.cbCurrentSoure.Name = "cbCurrentSoure";
-            this.cbCurrentSoure.Size = new System.Drawing.Size(98, 21);
+            this.cbCurrentSoure.Size = new System.Drawing.Size(98, 24);
             this.cbCurrentSoure.TabIndex = 18;
             this.cbCurrentSoure.SelectedIndexChanged += new System.EventHandler(this.cbCurrentSoure_SelectedIndexChanged);
             // 
@@ -771,7 +776,7 @@ namespace OSD
             // 
             this.txtSAdd4.Location = new System.Drawing.Point(249, 113);
             this.txtSAdd4.Name = "txtSAdd4";
-            this.txtSAdd4.Size = new System.Drawing.Size(40, 20);
+            this.txtSAdd4.Size = new System.Drawing.Size(40, 22);
             this.txtSAdd4.TabIndex = 33;
             this.txtSAdd4.Text = "0";
             this.txtSAdd4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -781,7 +786,7 @@ namespace OSD
             // 
             this.txtSAdd3.Location = new System.Drawing.Point(249, 88);
             this.txtSAdd3.Name = "txtSAdd3";
-            this.txtSAdd3.Size = new System.Drawing.Size(40, 20);
+            this.txtSAdd3.Size = new System.Drawing.Size(40, 22);
             this.txtSAdd3.TabIndex = 32;
             this.txtSAdd3.Text = "0";
             this.txtSAdd3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -791,7 +796,7 @@ namespace OSD
             // 
             this.txtSAdd2.Location = new System.Drawing.Point(249, 62);
             this.txtSAdd2.Name = "txtSAdd2";
-            this.txtSAdd2.Size = new System.Drawing.Size(40, 20);
+            this.txtSAdd2.Size = new System.Drawing.Size(40, 22);
             this.txtSAdd2.TabIndex = 31;
             this.txtSAdd2.Text = "0";
             this.txtSAdd2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -801,7 +806,7 @@ namespace OSD
             // 
             this.txtSAdd1.Location = new System.Drawing.Point(249, 37);
             this.txtSAdd1.Name = "txtSAdd1";
-            this.txtSAdd1.Size = new System.Drawing.Size(40, 20);
+            this.txtSAdd1.Size = new System.Drawing.Size(40, 22);
             this.txtSAdd1.TabIndex = 30;
             this.txtSAdd1.Text = "0";
             this.txtSAdd1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -812,7 +817,7 @@ namespace OSD
             this.label41.AutoSize = true;
             this.label41.Location = new System.Drawing.Point(251, 18);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(25, 13);
+            this.label41.Size = new System.Drawing.Size(32, 17);
             this.label41.TabIndex = 29;
             this.label41.Text = "add";
             // 
@@ -821,7 +826,7 @@ namespace OSD
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(26, 18);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(22, 13);
+            this.label40.Size = new System.Drawing.Size(28, 17);
             this.label40.TabIndex = 28;
             this.label40.Text = "Pin";
             // 
@@ -830,7 +835,7 @@ namespace OSD
             this.label39.AutoSize = true;
             this.label39.Location = new System.Drawing.Point(26, 115);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(32, 13);
+            this.label39.Size = new System.Drawing.Size(39, 17);
             this.label39.TabIndex = 27;
             this.label39.Text = "RSSI";
             // 
@@ -839,7 +844,7 @@ namespace OSD
             this.label38.AutoSize = true;
             this.label38.Location = new System.Drawing.Point(25, 90);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(41, 13);
+            this.label38.Size = new System.Drawing.Size(55, 17);
             this.label38.TabIndex = 26;
             this.label38.Text = "Current";
             // 
@@ -848,7 +853,7 @@ namespace OSD
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(26, 64);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(20, 13);
+            this.label33.Size = new System.Drawing.Size(25, 17);
             this.label33.TabIndex = 25;
             this.label33.Text = "V2";
             // 
@@ -857,7 +862,7 @@ namespace OSD
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(26, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 13);
+            this.label4.Size = new System.Drawing.Size(25, 17);
             this.label4.TabIndex = 24;
             this.label4.Text = "V1";
             // 
@@ -866,7 +871,7 @@ namespace OSD
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(13, 114);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(13, 13);
+            this.label37.Size = new System.Drawing.Size(16, 17);
             this.label37.TabIndex = 23;
             this.label37.Text = "4";
             // 
@@ -874,7 +879,7 @@ namespace OSD
             // 
             this.txtFactor4.Location = new System.Drawing.Point(196, 112);
             this.txtFactor4.Name = "txtFactor4";
-            this.txtFactor4.Size = new System.Drawing.Size(47, 20);
+            this.txtFactor4.Size = new System.Drawing.Size(47, 22);
             this.txtFactor4.TabIndex = 22;
             this.txtFactor4.Text = "1";
             this.txtFactor4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -886,7 +891,7 @@ namespace OSD
             this.txtFormat4.MaxLength = 16;
             this.txtFormat4.Name = "txtFormat4";
             this.txtFormat4.ShortcutsEnabled = false;
-            this.txtFormat4.Size = new System.Drawing.Size(112, 20);
+            this.txtFormat4.Size = new System.Drawing.Size(112, 22);
             this.txtFormat4.TabIndex = 21;
             this.txtFormat4.Text = "gh%5.2fKM";
             // 
@@ -895,7 +900,7 @@ namespace OSD
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(13, 89);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(13, 13);
+            this.label36.Size = new System.Drawing.Size(16, 17);
             this.label36.TabIndex = 18;
             this.label36.Text = "3";
             // 
@@ -903,7 +908,7 @@ namespace OSD
             // 
             this.txtFactor3.Location = new System.Drawing.Point(196, 87);
             this.txtFactor3.Name = "txtFactor3";
-            this.txtFactor3.Size = new System.Drawing.Size(47, 20);
+            this.txtFactor3.Size = new System.Drawing.Size(47, 22);
             this.txtFactor3.TabIndex = 17;
             this.txtFactor3.Text = "1";
             this.txtFactor3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -915,7 +920,7 @@ namespace OSD
             this.txtFormat3.MaxLength = 16;
             this.txtFormat3.Name = "txtFormat3";
             this.txtFormat3.ShortcutsEnabled = false;
-            this.txtFormat3.Size = new System.Drawing.Size(112, 20);
+            this.txtFormat3.Size = new System.Drawing.Size(112, 22);
             this.txtFormat3.TabIndex = 16;
             this.txtFormat3.Text = "ef%5.2f%%";
             // 
@@ -924,7 +929,7 @@ namespace OSD
             this.label35.AutoSize = true;
             this.label35.Location = new System.Drawing.Point(13, 63);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(13, 13);
+            this.label35.Size = new System.Drawing.Size(16, 17);
             this.label35.TabIndex = 13;
             this.label35.Text = "2";
             // 
@@ -932,7 +937,7 @@ namespace OSD
             // 
             this.txtFactor2.Location = new System.Drawing.Point(196, 61);
             this.txtFactor2.Name = "txtFactor2";
-            this.txtFactor2.Size = new System.Drawing.Size(47, 20);
+            this.txtFactor2.Size = new System.Drawing.Size(47, 22);
             this.txtFactor2.TabIndex = 12;
             this.txtFactor2.Text = "10";
             this.txtFactor2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -944,7 +949,7 @@ namespace OSD
             this.txtFormat2.MaxLength = 16;
             this.txtFormat2.Name = "txtFormat2";
             this.txtFormat2.ShortcutsEnabled = false;
-            this.txtFormat2.Size = new System.Drawing.Size(112, 20);
+            this.txtFormat2.Size = new System.Drawing.Size(112, 22);
             this.txtFormat2.TabIndex = 11;
             this.txtFormat2.Text = "cd%5.2fmv";
             // 
@@ -953,7 +958,7 @@ namespace OSD
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(13, 38);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(13, 13);
+            this.label34.Size = new System.Drawing.Size(16, 17);
             this.label34.TabIndex = 8;
             this.label34.Text = "1";
             // 
@@ -961,7 +966,7 @@ namespace OSD
             // 
             this.txtFactor1.Location = new System.Drawing.Point(196, 36);
             this.txtFactor1.Name = "txtFactor1";
-            this.txtFactor1.Size = new System.Drawing.Size(47, 20);
+            this.txtFactor1.Size = new System.Drawing.Size(47, 22);
             this.txtFactor1.TabIndex = 7;
             this.txtFactor1.Text = "10";
             this.txtFactor1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -973,7 +978,7 @@ namespace OSD
             this.txtFormat1.MaxLength = 16;
             this.txtFormat1.Name = "txtFormat1";
             this.txtFormat1.ShortcutsEnabled = false;
-            this.txtFormat1.Size = new System.Drawing.Size(112, 20);
+            this.txtFormat1.Size = new System.Drawing.Size(112, 22);
             this.txtFormat1.TabIndex = 6;
             this.txtFormat1.Text = "ab%5.2f\\x10";
             // 
@@ -982,7 +987,7 @@ namespace OSD
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(198, 17);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(34, 13);
+            this.label32.Size = new System.Drawing.Size(44, 17);
             this.label32.TabIndex = 2;
             this.label32.Text = "factor";
             // 
@@ -991,7 +996,7 @@ namespace OSD
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(93, 17);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 13);
+            this.label12.Size = new System.Drawing.Size(48, 17);
             this.label12.TabIndex = 1;
             this.label12.Text = "format";
             // 
@@ -1020,7 +1025,7 @@ namespace OSD
             "Off-On"});
             this.cbOutMode.Location = new System.Drawing.Point(60, 62);
             this.cbOutMode.Name = "cbOutMode";
-            this.cbOutMode.Size = new System.Drawing.Size(77, 21);
+            this.cbOutMode.Size = new System.Drawing.Size(77, 24);
             this.cbOutMode.TabIndex = 5;
             // 
             // label43
@@ -1028,7 +1033,7 @@ namespace OSD
             this.label43.AutoSize = true;
             this.label43.Location = new System.Drawing.Point(8, 65);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(34, 13);
+            this.label43.Size = new System.Drawing.Size(43, 17);
             this.label43.TabIndex = 4;
             this.label43.Text = "Mode";
             // 
@@ -1044,7 +1049,7 @@ namespace OSD
             "RSSI"});
             this.cbOutPin.Location = new System.Drawing.Point(60, 37);
             this.cbOutPin.Name = "cbOutPin";
-            this.cbOutPin.Size = new System.Drawing.Size(77, 21);
+            this.cbOutPin.Size = new System.Drawing.Size(77, 24);
             this.cbOutPin.TabIndex = 3;
             this.cbOutPin.SelectedIndexChanged += new System.EventHandler(this.cbOutPin_SelectedIndexChanged);
             // 
@@ -1059,7 +1064,7 @@ namespace OSD
             "Channel 8"});
             this.cbOutSource.Location = new System.Drawing.Point(60, 13);
             this.cbOutSource.Name = "cbOutSource";
-            this.cbOutSource.Size = new System.Drawing.Size(78, 21);
+            this.cbOutSource.Size = new System.Drawing.Size(78, 24);
             this.cbOutSource.TabIndex = 2;
             this.cbOutSource.SelectedIndexChanged += new System.EventHandler(this.cbOutSource_SelectedIndexChanged);
             // 
@@ -1068,7 +1073,7 @@ namespace OSD
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 13);
+            this.label2.Size = new System.Drawing.Size(28, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Pin";
             // 
@@ -1077,7 +1082,7 @@ namespace OSD
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Source";
             // 
@@ -1105,7 +1110,7 @@ namespace OSD
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(2, 73);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(65, 13);
+            this.label24.Size = new System.Drawing.Size(84, 17);
             this.label24.TabIndex = 31;
             this.label24.Text = "NTSC mode";
             // 
@@ -1113,7 +1118,7 @@ namespace OSD
             // 
             this.txtPitchNtsc.Location = new System.Drawing.Point(113, 90);
             this.txtPitchNtsc.Name = "txtPitchNtsc";
-            this.txtPitchNtsc.Size = new System.Drawing.Size(50, 20);
+            this.txtPitchNtsc.Size = new System.Drawing.Size(50, 22);
             this.txtPitchNtsc.TabIndex = 30;
             this.txtPitchNtsc.Text = "1";
             this.txtPitchNtsc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1124,7 +1129,7 @@ namespace OSD
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(78, 93);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(31, 13);
+            this.label25.Size = new System.Drawing.Size(39, 17);
             this.label25.TabIndex = 29;
             this.label25.Text = "Pitch";
             // 
@@ -1132,7 +1137,7 @@ namespace OSD
             // 
             this.txtRollNtsc.Location = new System.Drawing.Point(113, 68);
             this.txtRollNtsc.Name = "txtRollNtsc";
-            this.txtRollNtsc.Size = new System.Drawing.Size(50, 20);
+            this.txtRollNtsc.Size = new System.Drawing.Size(50, 22);
             this.txtRollNtsc.TabIndex = 28;
             this.txtRollNtsc.Text = "1";
             this.txtRollNtsc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1143,7 +1148,7 @@ namespace OSD
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(78, 71);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(25, 13);
+            this.label26.Size = new System.Drawing.Size(32, 17);
             this.label26.TabIndex = 27;
             this.label26.Text = "Roll";
             // 
@@ -1152,7 +1157,7 @@ namespace OSD
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(2, 18);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(56, 13);
+            this.label23.Size = new System.Drawing.Size(73, 17);
             this.label23.TabIndex = 26;
             this.label23.Text = "PAL mode";
             // 
@@ -1160,7 +1165,7 @@ namespace OSD
             // 
             this.txtPitchPal.Location = new System.Drawing.Point(113, 39);
             this.txtPitchPal.Name = "txtPitchPal";
-            this.txtPitchPal.Size = new System.Drawing.Size(50, 20);
+            this.txtPitchPal.Size = new System.Drawing.Size(50, 22);
             this.txtPitchPal.TabIndex = 25;
             this.txtPitchPal.Text = "1";
             this.txtPitchPal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1171,7 +1176,7 @@ namespace OSD
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(78, 42);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(31, 13);
+            this.label22.Size = new System.Drawing.Size(39, 17);
             this.label22.TabIndex = 24;
             this.label22.Text = "Pitch";
             // 
@@ -1179,7 +1184,7 @@ namespace OSD
             // 
             this.txtRollPal.Location = new System.Drawing.Point(113, 17);
             this.txtRollPal.Name = "txtRollPal";
-            this.txtRollPal.Size = new System.Drawing.Size(50, 20);
+            this.txtRollPal.Size = new System.Drawing.Size(50, 22);
             this.txtRollPal.TabIndex = 23;
             this.txtRollPal.Text = "1";
             this.txtRollPal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1190,7 +1195,7 @@ namespace OSD
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(78, 20);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(25, 13);
+            this.label21.Size = new System.Drawing.Size(32, 17);
             this.label21.TabIndex = 22;
             this.label21.Text = "Roll";
             // 
@@ -1202,7 +1207,7 @@ namespace OSD
             this.groupBox13.Controls.Add(this.cbBattB_source);
             this.groupBox13.Controls.Add(this.label6);
             this.groupBox13.Controls.Add(this.numMinVoltB);
-            this.groupBox13.Location = new System.Drawing.Point(490, 5);
+            this.groupBox13.Location = new System.Drawing.Point(684, 5);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(181, 112);
             this.groupBox13.TabIndex = 11;
@@ -1213,7 +1218,7 @@ namespace OSD
             // 
             this.txtBattB_k.Location = new System.Drawing.Point(123, 85);
             this.txtBattB_k.Name = "txtBattB_k";
-            this.txtBattB_k.Size = new System.Drawing.Size(49, 20);
+            this.txtBattB_k.Size = new System.Drawing.Size(49, 22);
             this.txtBattB_k.TabIndex = 23;
             this.txtBattB_k.Text = "1";
             this.txtBattB_k.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1225,7 +1230,7 @@ namespace OSD
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(35, 90);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(82, 13);
+            this.label28.Size = new System.Drawing.Size(108, 17);
             this.label28.TabIndex = 22;
             this.label28.Text = "Adjust pin value";
             // 
@@ -1234,7 +1239,7 @@ namespace OSD
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(8, 20);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(34, 13);
+            this.label16.Size = new System.Drawing.Size(43, 17);
             this.label16.TabIndex = 5;
             this.label16.Text = "Input:";
             // 
@@ -1247,7 +1252,7 @@ namespace OSD
             "Pin BattB"});
             this.cbBattB_source.Location = new System.Drawing.Point(55, 16);
             this.cbBattB_source.Name = "cbBattB_source";
-            this.cbBattB_source.Size = new System.Drawing.Size(98, 21);
+            this.cbBattB_source.Size = new System.Drawing.Size(98, 24);
             this.cbBattB_source.TabIndex = 16;
             this.cbBattB_source.SelectedIndexChanged += new System.EventHandler(this.cbBattB_source_SelectedIndexChanged);
             // 
@@ -1256,7 +1261,7 @@ namespace OSD
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 44);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 13);
+            this.label6.Size = new System.Drawing.Size(196, 17);
             this.label6.TabIndex = 4;
             this.label6.Text = "Warn Min. Battery Voltage (V)";
             // 
@@ -1275,7 +1280,7 @@ namespace OSD
             0,
             65536});
             this.numMinVoltB.Name = "numMinVoltB";
-            this.numMinVoltB.Size = new System.Drawing.Size(91, 20);
+            this.numMinVoltB.Size = new System.Drawing.Size(91, 22);
             this.numMinVoltB.TabIndex = 3;
             this.numMinVoltB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hint.SetToolTip(this.numMinVoltB, "Warning level, 0 to turn off");
@@ -1292,7 +1297,7 @@ namespace OSD
             this.groupBox9.Controls.Add(this.label29);
             this.groupBox9.Controls.Add(this.BRIGHTNESScomboBox);
             this.groupBox9.Controls.Add(this.label13);
-            this.groupBox9.Location = new System.Drawing.Point(327, 247);
+            this.groupBox9.Location = new System.Drawing.Point(521, 247);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(158, 128);
             this.groupBox9.TabIndex = 10;
@@ -1311,7 +1316,7 @@ namespace OSD
             "4"});
             this.cbNscreens.Location = new System.Drawing.Point(83, 98);
             this.cbNscreens.Name = "cbNscreens";
-            this.cbNscreens.Size = new System.Drawing.Size(66, 21);
+            this.cbNscreens.Size = new System.Drawing.Size(66, 24);
             this.cbNscreens.TabIndex = 10;
             this.cbNscreens.SelectedIndexChanged += new System.EventHandler(this.cbNscreens_SelectedIndexChanged);
             // 
@@ -1320,7 +1325,7 @@ namespace OSD
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 9;
             this.label3.Text = "Screens Count";
             // 
@@ -1338,7 +1343,7 @@ namespace OSD
             0,
             -2147483648});
             this.numHOS.Name = "numHOS";
-            this.numHOS.Size = new System.Drawing.Size(66, 20);
+            this.numHOS.Size = new System.Drawing.Size(66, 22);
             this.numHOS.TabIndex = 8;
             this.numHOS.ValueChanged += new System.EventHandler(this.numHOS_ValueChanged);
             // 
@@ -1356,7 +1361,7 @@ namespace OSD
             0,
             -2147483648});
             this.numVOS.Name = "numVOS";
-            this.numVOS.Size = new System.Drawing.Size(67, 20);
+            this.numVOS.Size = new System.Drawing.Size(67, 22);
             this.numVOS.TabIndex = 7;
             this.numVOS.ValueChanged += new System.EventHandler(this.numVOS_ValueChanged);
             // 
@@ -1365,7 +1370,7 @@ namespace OSD
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(51, 72);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(25, 13);
+            this.label31.Size = new System.Drawing.Size(32, 17);
             this.label31.TabIndex = 6;
             this.label31.Text = "Left";
             // 
@@ -1374,7 +1379,7 @@ namespace OSD
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(50, 50);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(26, 13);
+            this.label30.Size = new System.Drawing.Size(33, 17);
             this.label30.TabIndex = 5;
             this.label30.Text = "Top";
             // 
@@ -1383,7 +1388,7 @@ namespace OSD
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(5, 48);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(40, 13);
+            this.label29.Size = new System.Drawing.Size(53, 17);
             this.label29.TabIndex = 4;
             this.label29.Text = "Offsets";
             // 
@@ -1399,7 +1404,7 @@ namespace OSD
             this.BRIGHTNESScomboBox.Location = new System.Drawing.Point(66, 14);
             this.BRIGHTNESScomboBox.Margin = new System.Windows.Forms.Padding(2);
             this.BRIGHTNESScomboBox.Name = "BRIGHTNESScomboBox";
-            this.BRIGHTNESScomboBox.Size = new System.Drawing.Size(83, 21);
+            this.BRIGHTNESScomboBox.Size = new System.Drawing.Size(83, 24);
             this.BRIGHTNESScomboBox.TabIndex = 3;
             this.BRIGHTNESScomboBox.SelectedIndexChanged += new System.EventHandler(this.BRIGHTNESScomboBox_SelectedIndexChanged);
             // 
@@ -1408,7 +1413,7 @@ namespace OSD
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(5, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 13);
+            this.label13.Size = new System.Drawing.Size(75, 17);
             this.label13.TabIndex = 2;
             this.label13.Text = "Brightness";
             // 
@@ -1437,7 +1442,7 @@ namespace OSD
             this.lblTimes.AutoSize = true;
             this.lblTimes.Location = new System.Drawing.Point(81, 65);
             this.lblTimes.Name = "lblTimes";
-            this.lblTimes.Size = new System.Drawing.Size(88, 13);
+            this.lblTimes.Size = new System.Drawing.Size(118, 17);
             this.lblTimes.TabIndex = 34;
             this.lblTimes.Text = "Times per screen";
             this.lblTimes.Visible = false;
@@ -1447,7 +1452,7 @@ namespace OSD
             this.chkByTime.AutoSize = true;
             this.chkByTime.Location = new System.Drawing.Point(6, 64);
             this.chkByTime.Name = "chkByTime";
-            this.chkByTime.Size = new System.Drawing.Size(81, 17);
+            this.chkByTime.Size = new System.Drawing.Size(102, 21);
             this.chkByTime.TabIndex = 33;
             this.chkByTime.Text = "Auto-switch";
             this.chkByTime.UseVisualStyleBackColor = true;
@@ -1457,7 +1462,7 @@ namespace OSD
             // 
             this.txtTime3.Location = new System.Drawing.Point(120, 84);
             this.txtTime3.Name = "txtTime3";
-            this.txtTime3.Size = new System.Drawing.Size(32, 20);
+            this.txtTime3.Size = new System.Drawing.Size(32, 22);
             this.txtTime3.TabIndex = 32;
             this.txtTime3.Text = "1";
             this.txtTime3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1467,7 +1472,7 @@ namespace OSD
             // 
             this.txtTime2.Location = new System.Drawing.Point(82, 84);
             this.txtTime2.Name = "txtTime2";
-            this.txtTime2.Size = new System.Drawing.Size(32, 20);
+            this.txtTime2.Size = new System.Drawing.Size(32, 22);
             this.txtTime2.TabIndex = 31;
             this.txtTime2.Text = "1";
             this.txtTime2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1477,7 +1482,7 @@ namespace OSD
             // 
             this.txtTime1.Location = new System.Drawing.Point(44, 84);
             this.txtTime1.Name = "txtTime1";
-            this.txtTime1.Size = new System.Drawing.Size(32, 20);
+            this.txtTime1.Size = new System.Drawing.Size(32, 22);
             this.txtTime1.TabIndex = 30;
             this.txtTime1.Text = "1";
             this.txtTime1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1487,7 +1492,7 @@ namespace OSD
             // 
             this.txtTime0.Location = new System.Drawing.Point(6, 84);
             this.txtTime0.Name = "txtTime0";
-            this.txtTime0.Size = new System.Drawing.Size(32, 20);
+            this.txtTime0.Size = new System.Drawing.Size(32, 22);
             this.txtTime0.TabIndex = 29;
             this.txtTime0.Text = "1";
             this.txtTime0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1500,7 +1505,7 @@ namespace OSD
             this.chkDiap.AutoSize = true;
             this.chkDiap.Location = new System.Drawing.Point(107, 22);
             this.chkDiap.Name = "chkDiap";
-            this.chkDiap.Size = new System.Drawing.Size(61, 17);
+            this.chkDiap.Size = new System.Drawing.Size(77, 21);
             this.chkDiap.TabIndex = 12;
             this.chkDiap.Text = "by  200";
             this.hint.SetToolTip(this.chkDiap, "Turn by small change - not full channel range");
@@ -1512,7 +1517,7 @@ namespace OSD
             this.TOGGLE_BEH.Location = new System.Drawing.Point(6, 44);
             this.TOGGLE_BEH.Margin = new System.Windows.Forms.Padding(2);
             this.TOGGLE_BEH.Name = "TOGGLE_BEH";
-            this.TOGGLE_BEH.Size = new System.Drawing.Size(101, 17);
+            this.TOGGLE_BEH.Size = new System.Drawing.Size(127, 21);
             this.TOGGLE_BEH.TabIndex = 10;
             this.TOGGLE_BEH.Text = "Rotation Switch";
             this.hint.SetToolTip(this.TOGGLE_BEH, "Go to next screen on each switch");
@@ -1534,7 +1539,7 @@ namespace OSD
             this.ONOFF_combo.Location = new System.Drawing.Point(6, 20);
             this.ONOFF_combo.Margin = new System.Windows.Forms.Padding(2);
             this.ONOFF_combo.Name = "ONOFF_combo";
-            this.ONOFF_combo.Size = new System.Drawing.Size(84, 21);
+            this.ONOFF_combo.Size = new System.Drawing.Size(84, 24);
             this.ONOFF_combo.TabIndex = 3;
             this.ONOFF_combo.SelectedIndexChanged += new System.EventHandler(this.ONOFF_combo_SelectedIndexChanged);
             // 
@@ -1543,7 +1548,7 @@ namespace OSD
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(5, 10);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.Size = new System.Drawing.Size(0, 17);
             this.label11.TabIndex = 2;
             // 
             // chkSwitchOnce
@@ -1551,7 +1556,7 @@ namespace OSD
             this.chkSwitchOnce.AutoSize = true;
             this.chkSwitchOnce.Location = new System.Drawing.Point(117, 44);
             this.chkSwitchOnce.Name = "chkSwitchOnce";
-            this.chkSwitchOnce.Size = new System.Drawing.Size(52, 17);
+            this.chkSwitchOnce.Size = new System.Drawing.Size(64, 21);
             this.chkSwitchOnce.TabIndex = 11;
             this.chkSwitchOnce.Text = "Once";
             this.hint.SetToolTip(this.chkSwitchOnce, "Turn off autorepeat");
@@ -1567,7 +1572,7 @@ namespace OSD
             this.groupBox4.Controls.Add(this.BATT_WARNnumeric);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.MINVOLT_numeric);
-            this.groupBox4.Location = new System.Drawing.Point(327, 5);
+            this.groupBox4.Location = new System.Drawing.Point(521, 5);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(158, 155);
             this.groupBox4.TabIndex = 5;
@@ -1578,7 +1583,7 @@ namespace OSD
             // 
             this.txtBattA_k.Location = new System.Drawing.Point(100, 126);
             this.txtBattA_k.Name = "txtBattA_k";
-            this.txtBattA_k.Size = new System.Drawing.Size(49, 20);
+            this.txtBattA_k.Size = new System.Drawing.Size(49, 22);
             this.txtBattA_k.TabIndex = 23;
             this.txtBattA_k.Text = "1";
             this.txtBattA_k.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1590,7 +1595,7 @@ namespace OSD
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(9, 129);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(82, 13);
+            this.label27.Size = new System.Drawing.Size(108, 17);
             this.label27.TabIndex = 22;
             this.label27.Text = "Adjust pin value";
             // 
@@ -1599,7 +1604,7 @@ namespace OSD
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(7, 21);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(34, 13);
+            this.label17.Size = new System.Drawing.Size(43, 17);
             this.label17.TabIndex = 17;
             this.label17.Text = "Input:";
             // 
@@ -1612,7 +1617,7 @@ namespace OSD
             "Pin BattA"});
             this.cbBattA_source.Location = new System.Drawing.Point(51, 16);
             this.cbBattA_source.Name = "cbBattA_source";
-            this.cbBattA_source.Size = new System.Drawing.Size(98, 21);
+            this.cbBattA_source.Size = new System.Drawing.Size(98, 24);
             this.cbBattA_source.TabIndex = 16;
             this.cbBattA_source.SelectedIndexChanged += new System.EventHandler(this.cbBattA_source_SelectedIndexChanged);
             // 
@@ -1621,7 +1626,7 @@ namespace OSD
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(4, 85);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 13);
+            this.label9.Size = new System.Drawing.Size(151, 17);
             this.label9.TabIndex = 13;
             this.label9.Text = "Remain % warning (%)";
             // 
@@ -1629,7 +1634,7 @@ namespace OSD
             // 
             this.BATT_WARNnumeric.Location = new System.Drawing.Point(58, 101);
             this.BATT_WARNnumeric.Name = "BATT_WARNnumeric";
-            this.BATT_WARNnumeric.Size = new System.Drawing.Size(91, 20);
+            this.BATT_WARNnumeric.Size = new System.Drawing.Size(91, 22);
             this.BATT_WARNnumeric.TabIndex = 12;
             this.BATT_WARNnumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hint.SetToolTip(this.BATT_WARNnumeric, "Warning level by capacity, 0 to turn off");
@@ -1640,7 +1645,7 @@ namespace OSD
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(5, 45);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 13);
+            this.label7.Size = new System.Drawing.Size(162, 17);
             this.label7.TabIndex = 2;
             this.label7.Text = "Min Voltage Warning (V)";
             // 
@@ -1659,7 +1664,7 @@ namespace OSD
             0,
             65536});
             this.MINVOLT_numeric.Name = "MINVOLT_numeric";
-            this.MINVOLT_numeric.Size = new System.Drawing.Size(91, 20);
+            this.MINVOLT_numeric.Size = new System.Drawing.Size(91, 22);
             this.MINVOLT_numeric.TabIndex = 0;
             this.MINVOLT_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hint.SetToolTip(this.MINVOLT_numeric, "Warning level, 0 to turn off");
@@ -1667,13 +1672,15 @@ namespace OSD
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.VIBE_numeric);
             this.groupBox3.Controls.Add(this.OVERSPEED_label);
             this.groupBox3.Controls.Add(this.OVERSPEED_numeric);
             this.groupBox3.Controls.Add(this.STALL_label);
             this.groupBox3.Controls.Add(this.STALL_numeric);
             this.groupBox3.Location = new System.Drawing.Point(180, 119);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(144, 116);
+            this.groupBox3.Size = new System.Drawing.Size(331, 116);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Warnings";
@@ -1683,7 +1690,7 @@ namespace OSD
             this.OVERSPEED_label.AutoSize = true;
             this.OVERSPEED_label.Location = new System.Drawing.Point(6, 68);
             this.OVERSPEED_label.Name = "OVERSPEED_label";
-            this.OVERSPEED_label.Size = new System.Drawing.Size(90, 13);
+            this.OVERSPEED_label.Size = new System.Drawing.Size(116, 17);
             this.OVERSPEED_label.TabIndex = 4;
             this.OVERSPEED_label.Text = "Overspeed, km/h";
             // 
@@ -1696,7 +1703,7 @@ namespace OSD
             0,
             0});
             this.OVERSPEED_numeric.Name = "OVERSPEED_numeric";
-            this.OVERSPEED_numeric.Size = new System.Drawing.Size(63, 20);
+            this.OVERSPEED_numeric.Size = new System.Drawing.Size(63, 22);
             this.OVERSPEED_numeric.TabIndex = 3;
             this.OVERSPEED_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.OVERSPEED_numeric.ValueChanged += new System.EventHandler(this.OVERSPEED_numeric_ValueChanged);
@@ -1706,7 +1713,7 @@ namespace OSD
             this.STALL_label.AutoSize = true;
             this.STALL_label.Location = new System.Drawing.Point(6, 20);
             this.STALL_label.Name = "STALL_label";
-            this.STALL_label.Size = new System.Drawing.Size(92, 13);
+            this.STALL_label.Size = new System.Drawing.Size(118, 17);
             this.STALL_label.TabIndex = 2;
             this.STALL_label.Text = "Stall Speed, km/h";
             this.STALL_label.UseMnemonic = false;
@@ -1720,7 +1727,7 @@ namespace OSD
             0,
             0});
             this.STALL_numeric.Name = "STALL_numeric";
-            this.STALL_numeric.Size = new System.Drawing.Size(63, 20);
+            this.STALL_numeric.Size = new System.Drawing.Size(63, 22);
             this.STALL_numeric.TabIndex = 0;
             this.STALL_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.STALL_numeric.ValueChanged += new System.EventHandler(this.STALL_numeric_ValueChanged);
@@ -1738,7 +1745,7 @@ namespace OSD
             this.groupBoxRSSI.Controls.Add(this.lblRSSIMin);
             this.groupBoxRSSI.Controls.Add(this.RSSI_numeric_max);
             this.groupBoxRSSI.Controls.Add(this.RSSI_numeric_min);
-            this.groupBoxRSSI.Location = new System.Drawing.Point(490, 119);
+            this.groupBoxRSSI.Location = new System.Drawing.Point(684, 119);
             this.groupBoxRSSI.Name = "groupBoxRSSI";
             this.groupBoxRSSI.Size = new System.Drawing.Size(181, 159);
             this.groupBoxRSSI.TabIndex = 3;
@@ -1749,7 +1756,7 @@ namespace OSD
             // 
             this.txtRSSI_k.Location = new System.Drawing.Point(125, 128);
             this.txtRSSI_k.Name = "txtRSSI_k";
-            this.txtRSSI_k.Size = new System.Drawing.Size(47, 20);
+            this.txtRSSI_k.Size = new System.Drawing.Size(47, 22);
             this.txtRSSI_k.TabIndex = 23;
             this.txtRSSI_k.Text = "1";
             this.txtRSSI_k.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1761,7 +1768,7 @@ namespace OSD
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(33, 131);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(82, 13);
+            this.label20.Size = new System.Drawing.Size(108, 17);
             this.label20.TabIndex = 22;
             this.label20.Text = "Adjust pin value";
             // 
@@ -1778,7 +1785,7 @@ namespace OSD
             this.cbxRSSIChannel.Location = new System.Drawing.Point(55, 9);
             this.cbxRSSIChannel.Margin = new System.Windows.Forms.Padding(2);
             this.cbxRSSIChannel.Name = "cbxRSSIChannel";
-            this.cbxRSSIChannel.Size = new System.Drawing.Size(117, 21);
+            this.cbxRSSIChannel.Size = new System.Drawing.Size(117, 24);
             this.cbxRSSIChannel.TabIndex = 13;
             this.cbxRSSIChannel.SelectedIndexChanged += new System.EventHandler(this.cbxRSSIChannel_SelectedIndexChanged);
             // 
@@ -1787,7 +1794,7 @@ namespace OSD
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(13, 12);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(45, 13);
+            this.label15.Size = new System.Drawing.Size(59, 17);
             this.label15.TabIndex = 12;
             this.label15.Text = "source: ";
             // 
@@ -1796,7 +1803,7 @@ namespace OSD
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(5, 89);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 13);
+            this.label8.Size = new System.Drawing.Size(125, 17);
             this.label8.TabIndex = 11;
             this.label8.Text = "Warning Level (%)";
             // 
@@ -1804,7 +1811,7 @@ namespace OSD
             // 
             this.RSSI_WARNnumeric.Location = new System.Drawing.Point(111, 85);
             this.RSSI_WARNnumeric.Name = "RSSI_WARNnumeric";
-            this.RSSI_WARNnumeric.Size = new System.Drawing.Size(61, 20);
+            this.RSSI_WARNnumeric.Size = new System.Drawing.Size(61, 22);
             this.RSSI_WARNnumeric.TabIndex = 10;
             this.RSSI_WARNnumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.hint.SetToolTip(this.RSSI_WARNnumeric, "0 to turn off");
@@ -1816,7 +1823,7 @@ namespace OSD
             this.RSSI_RAW.Location = new System.Drawing.Point(8, 106);
             this.RSSI_RAW.Margin = new System.Windows.Forms.Padding(2);
             this.RSSI_RAW.Name = "RSSI_RAW";
-            this.RSSI_RAW.Size = new System.Drawing.Size(102, 17);
+            this.RSSI_RAW.Size = new System.Drawing.Size(128, 21);
             this.RSSI_RAW.TabIndex = 9;
             this.RSSI_RAW.Text = "Show raw value";
             this.RSSI_RAW.UseVisualStyleBackColor = true;
@@ -1827,7 +1834,7 @@ namespace OSD
             this.lblRSSIMax.AutoSize = true;
             this.lblRSSIMax.Location = new System.Drawing.Point(4, 65);
             this.lblRSSIMax.Name = "lblRSSIMax";
-            this.lblRSSIMax.Size = new System.Drawing.Size(57, 13);
+            this.lblRSSIMax.Size = new System.Drawing.Size(73, 17);
             this.lblRSSIMax.TabIndex = 3;
             this.lblRSSIMax.Text = "Max Value";
             // 
@@ -1836,7 +1843,7 @@ namespace OSD
             this.lblRSSIMin.AutoSize = true;
             this.lblRSSIMin.Location = new System.Drawing.Point(4, 37);
             this.lblRSSIMin.Name = "lblRSSIMin";
-            this.lblRSSIMin.Size = new System.Drawing.Size(54, 13);
+            this.lblRSSIMin.Size = new System.Drawing.Size(70, 17);
             this.lblRSSIMin.TabIndex = 2;
             this.lblRSSIMin.Text = "Min Value";
             // 
@@ -1849,7 +1856,7 @@ namespace OSD
             0,
             0});
             this.RSSI_numeric_max.Name = "RSSI_numeric_max";
-            this.RSSI_numeric_max.Size = new System.Drawing.Size(91, 20);
+            this.RSSI_numeric_max.Size = new System.Drawing.Size(91, 22);
             this.RSSI_numeric_max.TabIndex = 1;
             this.RSSI_numeric_max.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RSSI_numeric_max.Value = new decimal(new int[] {
@@ -1868,7 +1875,7 @@ namespace OSD
             0,
             0});
             this.RSSI_numeric_min.Name = "RSSI_numeric_min";
-            this.RSSI_numeric_min.Size = new System.Drawing.Size(91, 20);
+            this.RSSI_numeric_min.Size = new System.Drawing.Size(91, 22);
             this.RSSI_numeric_min.TabIndex = 0;
             this.RSSI_numeric_min.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.RSSI_numeric_min.ValueChanged += new System.EventHandler(this.RSSI_numeric_min_ValueChanged);
@@ -1930,7 +1937,7 @@ namespace OSD
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(6, 15);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(0, 13);
+            this.label14.Size = new System.Drawing.Size(0, 17);
             this.label14.TabIndex = 14;
             // 
             // lblFWModelType
@@ -1946,7 +1953,7 @@ namespace OSD
             this.lblModelType.AutoSize = true;
             this.lblModelType.Location = new System.Drawing.Point(6, 16);
             this.lblModelType.Name = "lblModelType";
-            this.lblModelType.Size = new System.Drawing.Size(112, 13);
+            this.lblModelType.Size = new System.Drawing.Size(150, 17);
             this.lblModelType.TabIndex = 13;
             this.lblModelType.Text = "Presented model type:";
             // 
@@ -1957,7 +1964,7 @@ namespace OSD
             this.cbxModelType.Location = new System.Drawing.Point(134, 13);
             this.cbxModelType.Margin = new System.Windows.Forms.Padding(2);
             this.cbxModelType.Name = "cbxModelType";
-            this.cbxModelType.Size = new System.Drawing.Size(107, 21);
+            this.cbxModelType.Size = new System.Drawing.Size(107, 24);
             this.cbxModelType.TabIndex = 12;
             this.cbxModelType.SelectedIndexChanged += new System.EventHandler(this.cbxModelType_SelectedIndexChanged);
             // 
@@ -1966,7 +1973,7 @@ namespace OSD
             this.lblPresentedCharset.AutoSize = true;
             this.lblPresentedCharset.Location = new System.Drawing.Point(7, 40);
             this.lblPresentedCharset.Name = "lblPresentedCharset";
-            this.lblPresentedCharset.Size = new System.Drawing.Size(97, 13);
+            this.lblPresentedCharset.Size = new System.Drawing.Size(130, 17);
             this.lblPresentedCharset.TabIndex = 6;
             this.lblPresentedCharset.Text = "Presented Charset:";
             this.lblPresentedCharset.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1975,9 +1982,9 @@ namespace OSD
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(266, 513);
+            this.label5.Location = new System.Drawing.Point(540, 553);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 16;
             this.label5.Text = "Serial Port:";
             // 
@@ -2041,7 +2048,7 @@ namespace OSD
             // BUT_CopyScreen
             // 
             this.BUT_CopyScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BUT_CopyScreen.Location = new System.Drawing.Point(142, 508);
+            this.BUT_CopyScreen.Location = new System.Drawing.Point(416, 548);
             this.BUT_CopyScreen.Name = "BUT_CopyScreen";
             this.BUT_CopyScreen.Size = new System.Drawing.Size(100, 23);
             this.BUT_CopyScreen.TabIndex = 20;
@@ -2052,7 +2059,7 @@ namespace OSD
             // BUT_ClearScreen
             // 
             this.BUT_ClearScreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BUT_ClearScreen.Location = new System.Drawing.Point(26, 508);
+            this.BUT_ClearScreen.Location = new System.Drawing.Point(300, 548);
             this.BUT_ClearScreen.Name = "BUT_ClearScreen";
             this.BUT_ClearScreen.Size = new System.Drawing.Size(100, 23);
             this.BUT_ClearScreen.TabIndex = 20;
@@ -2060,10 +2067,34 @@ namespace OSD
             this.BUT_ClearScreen.UseVisualStyleBackColor = true;
             this.BUT_ClearScreen.Click += new System.EventHandler(this.BUT_ClearScreen_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(169, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 17);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Vibe warning";
+            this.label10.UseMnemonic = false;
+            // 
+            // VIBE_numeric
+            // 
+            this.VIBE_numeric.Location = new System.Drawing.Point(237, 37);
+            this.VIBE_numeric.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.VIBE_numeric.Name = "VIBE_numeric";
+            this.VIBE_numeric.Size = new System.Drawing.Size(63, 22);
+            this.VIBE_numeric.TabIndex = 5;
+            this.VIBE_numeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.VIBE_numeric.ValueChanged += new System.EventHandler(this.VIBE_numeric_ValueChanged);
+            // 
             // OSD
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(688, 558);
+            this.ClientSize = new System.Drawing.Size(962, 598);
             this.Controls.Add(this.BUT_ClearScreen);
             this.Controls.Add(this.BUT_CopyScreen);
             this.Controls.Add(this.groupBox12);
@@ -2126,6 +2157,7 @@ namespace OSD
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             this.groupBox12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.VIBE_numeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2307,6 +2339,8 @@ namespace OSD
         private System.Windows.Forms.ComboBox UNITS_combo;
         private System.Windows.Forms.MaskedTextBox CALLSIGNmaskedText;
         private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown VIBE_numeric;
     }
 
 }

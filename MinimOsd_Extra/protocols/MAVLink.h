@@ -200,7 +200,11 @@ if(apm_mav_system  != msg.m.sysid){
             case MAVLINK_MSG_ID_SYS_STATUS:
                 if(!FLAGS.useExtVbattA){
                     osd_vbat_A = mavlink_msg_sys_status_get_voltage_battery(&msg.m) ; //Battery voltage, in millivolts (1 = 1 millivolt)
-                    osd_battery_remaining_A = mavlink_msg_sys_status_get_battery_remaining(&msg.m); //Remaining battery energy: (0%: 0, 100%: 100)
+                    int8_t v = mavlink_msg_sys_status_get_battery_remaining(&msg.m); //Remaining battery energy: (0%: 0, 100%: 100)
+					if (v < 0)
+						available_fly_time = v * -1;
+					else
+						osd_battery_remaining_A = v;
                 }
                 if(!FLAGS.useExtCurr)
                     osd_curr_A = mavlink_msg_sys_status_get_current_battery(&msg.m); //Battery current, in 10*milliamperes (1 = 10 milliampere)

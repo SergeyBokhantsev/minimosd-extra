@@ -187,6 +187,8 @@ struct Settings {
 
 //0x45
     byte pwm_mode; // 0-pwm 1-in/off
+	
+	byte vibe_treshold; // vibration warning treshold
 };
 
 union _Settings {

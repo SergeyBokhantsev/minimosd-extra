@@ -96,6 +96,8 @@ namespace OSD {
         internal uint16_t RSSI_16_high;
 
         internal byte pwm_mode; // mode of output pin
+
+        internal byte vibe_treshold; // vibe warning
     };
 
     [StructLayout(LayoutKind.Sequential, Pack = 1)]

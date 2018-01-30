@@ -86,7 +86,7 @@ void doScreenSwitch(){
 
 }
 
-#define USE_AUTOSWITCH 1
+//#define USE_AUTOSWITCH 1
 
 static void pan_toggle(){
     byte old_panel=panelN;

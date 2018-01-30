@@ -163,129 +163,129 @@ static void NOINLINE showArrow(uint8_t rotate_arrow){
 // Calculate and show artificial horizon
 // used formula: y = m * x + n <=> y = tan(a) * x + n
 static void showHorizon() {
-    byte col, row;
+    // byte col, row;
 
-    byte line_set = LINE_SET_STRAIGHT__;
-    byte line_set_overflow = LINE_SET_STRAIGHT_O;
-    int8_t subval_overflow = 9;
+    // byte line_set = LINE_SET_STRAIGHT__;
+    // byte line_set_overflow = LINE_SET_STRAIGHT_O;
+    // int8_t subval_overflow = 9;
 
 
 
-    float k_pitch, // conversion factor for pitch
-	  k_roll ; // conversion factor for roll
+    // float k_pitch, // conversion factor for pitch
+	  // k_roll ; // conversion factor for roll
     
-    // NTSC: osd.getMode() == 0
-    {
-        byte fPAL=osd.getMode();
-        k_pitch = (fPAL ? sets.horiz_kPitch:sets.horiz_kPitch_a);
-        k_roll  = (fPAL ? sets.horiz_kRoll :sets.horiz_kRoll_a);
-     }
+   // NTSC: osd.getMode() == 0
+    // {
+        // byte fPAL=osd.getMode();
+        // k_pitch = (fPAL ? sets.horiz_kPitch:sets.horiz_kPitch_a);
+        // k_roll  = (fPAL ? sets.horiz_kRoll :sets.horiz_kRoll_a);
+     // }
 
 
-    // preset the line char attributes
-    float  roll = osd_att.roll * k_roll;
-    if(screen_flags & scrFlg_russianHUD) roll = -roll;
+   // preset the line char attributes
+    // float  roll = osd_att.roll * k_roll;
+    // if(screen_flags & scrFlg_russianHUD) roll = -roll;
 
-    int iroll  = roll;
+    // int iroll  = roll;
 
-    if ((iroll >= 0 && iroll < 90) || (iroll >= -179 && iroll < -90)) {	// positive angle line chars
-	iroll = iroll < 0 ? iroll + 179 : iroll;
-	uint16_t a_roll=abs(iroll);
-	if(       a_roll > ANGLE_VERT) {
-	    line_set =          0xc1;
-	    subval_overflow = 0;
-	} else if( a_roll > ANGLE_DOT) {
-	    line_set =          0x24;
-	    subval_overflow = 0;
-	} else if( a_roll > ANGLE_2) {
-	    line_set =          LINE_SET_P___STAG_2;
-	    line_set_overflow = LINE_SET_P_O_STAG_2;
-            subval_overflow = 7;
-	} else if( a_roll > ANGLE_1) {
-	    line_set =          LINE_SET_P___STAG_1;
-	    line_set_overflow = LINE_SET_P_O_STAG_1;
-            subval_overflow = 8;
-	}
-    } else {								// negative angle line chars
-	iroll = iroll > 90 ? iroll - 179 : iroll;
-	uint16_t a_roll=abs(iroll);
-	if(        a_roll > ANGLE_VERT) {
-	    line_set =          0xc1;
-	    subval_overflow = 0;
-	} else if( a_roll > ANGLE_DOT) {
-	    line_set =          0x24;
-	    subval_overflow = 0;
-        } else if( a_roll > ANGLE_2) {
-	    line_set =          LINE_SET_N___STAG_2;
-	    line_set_overflow = LINE_SET_N_O_STAG_2;
-            subval_overflow = 7;
-	} else if( a_roll > ANGLE_1) {
-	    line_set =          LINE_SET_N___STAG_1;
-	    line_set_overflow = LINE_SET_N_O_STAG_1;
-            subval_overflow = 8;
-	}
-    }
+    // if ((iroll >= 0 && iroll < 90) || (iroll >= -179 && iroll < -90)) {	// positive angle line chars
+	// iroll = iroll < 0 ? iroll + 179 : iroll;
+	// uint16_t a_roll=abs(iroll);
+	// if(       a_roll > ANGLE_VERT) {
+	    // line_set =          0xc1;
+	    // subval_overflow = 0;
+	// } else if( a_roll > ANGLE_DOT) {
+	    // line_set =          0x24;
+	    // subval_overflow = 0;
+	// } else if( a_roll > ANGLE_2) {
+	    // line_set =          LINE_SET_P___STAG_2;
+	    // line_set_overflow = LINE_SET_P_O_STAG_2;
+            // subval_overflow = 7;
+	// } else if( a_roll > ANGLE_1) {
+	    // line_set =          LINE_SET_P___STAG_1;
+	    // line_set_overflow = LINE_SET_P_O_STAG_1;
+            // subval_overflow = 8;
+	// }
+    // } else {								// negative angle line chars
+	// iroll = iroll > 90 ? iroll - 179 : iroll;
+	// uint16_t a_roll=abs(iroll);
+	// if(        a_roll > ANGLE_VERT) {
+	    // line_set =          0xc1;
+	    // subval_overflow = 0;
+	// } else if( a_roll > ANGLE_DOT) {
+	    // line_set =          0x24;
+	    // subval_overflow = 0;
+        // } else if( a_roll > ANGLE_2) {
+	    // line_set =          LINE_SET_N___STAG_2;
+	    // line_set_overflow = LINE_SET_N_O_STAG_2;
+            // subval_overflow = 7;
+	// } else if( a_roll > ANGLE_1) {
+	    // line_set =          LINE_SET_N___STAG_1;
+	    // line_set_overflow = LINE_SET_N_O_STAG_1;
+            // subval_overflow = 8;
+	// }
+    // }
     
-    byte shf=0;
-    int8_t shift_angle=0;
-again:
-    if(shf>6) return; // not forever
+    // byte shf=0;
+    // int8_t shift_angle=0;
+// again:
+    // if(shf>6) return; // not forever
 
-    int pitch_line = (int)(round(tan(-AH_PITCH_FACTOR * (osd_att.pitch + shift_angle )* k_pitch) * AH_TOTAL_LINES)) + AH_TOTAL_LINES/2;	// 90 total lines - вычислили Y центра
-// -45 .. +45
+    // int pitch_line = (int)(round(tan(-AH_PITCH_FACTOR * (osd_att.pitch + shift_angle )* k_pitch) * AH_TOTAL_LINES)) + AH_TOTAL_LINES/2;	// 90 total lines - вычислили Y центра
+//-45 .. +45
 
 
-    // по уму при угле большем угла диагонали надо переходить с расчета по столбцам на расчет по строкам
-    for (col=1+shf; col<=AH_COLS-shf; col++) {
-       // получим координаты средней субколонки каждой колонки
-    //               = (col - AH_COLS/2 - 1/2) * CHAR_COLS;
-        int8_t middle = col * CHAR_COLS - (AH_COLS/2 * CHAR_COLS) - CHAR_COLS/2;	  // -66 to +66	center X point at middle of each column
+   // по уму при угле большем угла диагонали надо переходить с расчета по столбцам на расчет по строкам
+    // for (col=1+shf; col<=AH_COLS-shf; col++) {
+     //  получим координаты средней субколонки каждой колонки
+      //            = (col - AH_COLS/2 - 1/2) * CHAR_COLS;
+        // int8_t middle = col * CHAR_COLS - (AH_COLS/2 * CHAR_COLS) - CHAR_COLS/2;	  // -66 to +66	center X point at middle of each column
         
-        // tg(72 gr) ==3 so byte overflows
+      //  tg(72 gr) ==3 so byte overflows
 
-        int16_t hit = (int)(tan(AH_ROLL_FACTOR * roll) * middle) + pitch_line;    // 1 to 90	calculating hit point on Y plus offset
+        // int16_t hit = (int)(tan(AH_ROLL_FACTOR * roll) * middle) + pitch_line;    // 1 to 90	calculating hit point on Y plus offset
         
-        if (hit >= 1 && hit <= AH_TOTAL_LINES) {
-	    row = (hit-1) / CHAR_ROWS;						  // 0 to 4 bottom-up
+        // if (hit >= 1 && hit <= AH_TOTAL_LINES) {
+	    // row = (hit-1) / CHAR_ROWS;						  // 0 to 4 bottom-up
 
-	    byte subval;
-	    if(subval_overflow) // adjusted lines
-	        subval = (hit - (row * CHAR_ROWS) + 1) / (CHAR_ROWS / CHAR_SPECIAL);  // 1 to 9
-	    else
-		subval = 0; // raw chars
+	    // byte subval;
+	    // if(subval_overflow) // adjusted lines
+	        // subval = (hit - (row * CHAR_ROWS) + 1) / (CHAR_ROWS / CHAR_SPECIAL);  // 1 to 9
+	    // else
+		// subval = 0; // raw chars
 	    
-	    OSD::relPanel(col - 1, AH_ROWS - row - 1);
-	    if(shift_angle!=0 && col==(AH_COLS-1)/2){ // time to draw scale
-		osd.print(abs(shift_angle));
-		col++; // skip next
-	    } else {   // print the line char
-                OSD::write_S(line_set + subval);
-            }
+	    // OSD::relPanel(col - 1, AH_ROWS - row - 1);
+	    // if(shift_angle!=0 && col==(AH_COLS-1)/2){ // time to draw scale
+		// osd.print(abs(shift_angle));
+		// col++; // skip next
+	    // } else {   // print the line char
+                // OSD::write_S(line_set + subval);
+            // }
 	    
-	    // check if we have to print an overflow line char
-	    if ( subval && subval >= subval_overflow && row < 4) {  // only if it is a char which needs overflow and if it is not the upper most row
-                OSD::write_xy(col - 1, AH_ROWS - row - 2, line_set_overflow + subval - OVERFLOW_CHAR_OFFSET);
-	    }
-        }
-    }
+	//    check if we have to print an overflow line char
+	    // if ( subval && subval >= subval_overflow && row < 4) {  // only if it is a char which needs overflow and if it is not the upper most row
+                // OSD::write_xy(col - 1, AH_ROWS - row - 2, line_set_overflow + subval - OVERFLOW_CHAR_OFFSET);
+	    // }
+        // }
+    // }
 
- // если линия по питчу ушла с экрана то надо ее заузить на пару символов и сместить обратно
-// уйти-то она может и ушла, но при кренах появляется в углах, поэтому надо отрисовывать И ту, И другую
+ //если линия по питчу ушла с экрана то надо ее заузить на пару символов и сместить обратно
+//уйти-то она может и ушла, но при кренах появляется в углах, поэтому надо отрисовывать И ту, И другую
 
-// но вобшем-то лучше отнимать не строки, а угол, и возвращаться на шаг выше. Бонусом это даст возможность печатать посередине цифры угла
+//но вобшем-то лучше отнимать не строки, а угол, и возвращаться на шаг выше. Бонусом это даст возможность печатать посередине //цифры угла
 
-    if(pitch_line<0){
-//       pitch_line += AH_TOTAL_LINES-2;
-	shift_angle +=30;
-        shf+=4;
-        goto again;
-    }
-    if(pitch_line>AH_TOTAL_LINES){
-//       pitch_line -= AH_TOTAL_LINES-2;
-	shift_angle -=30;
-        shf+=4;
-        goto again;
-    }
+    // if(pitch_line<0){
+   //   pitch_line += AH_TOTAL_LINES-2;
+	// shift_angle +=30;
+        // shf+=4;
+        // goto again;
+    // }
+    // if(pitch_line>AH_TOTAL_LINES){
+  //    pitch_line -= AH_TOTAL_LINES-2;
+	// shift_angle -=30;
+        // shf+=4;
+        // goto again;
+    // }
 
 
 }
@@ -884,10 +884,6 @@ static inline void check_warn(point p)
     if (lflags.gps_active && osd_fix_type < 2) // GPS был но сейчас плохой
         wmask |= 1; //0
  
-//2    
-    if (sets.model_type==0 && iAirspeed < sets.stall && lflags.in_air ) // plane
-        wmask |= (1<<1);
-
 //3    
     if (sets.overspeed && iAirspeed > sets.overspeed) 
         wmask |= (1<<2);
@@ -916,22 +912,11 @@ static inline void check_warn(point p)
     if (sets.battBv !=0 && iVolt!=0 && (iVolt < sets.battBv) )
         wmask |= (1<<6);
 
-#if defined(USE_MAVLINK)
-  if(is_alt(p)) {
-//8
-    if(mav_fence_status == FENCE_BREACH_MINALT)
-        wmask |= (1<<7);
-
-//9
-    if(mav_fence_status == FENCE_BREACH_MAXALT)
-        wmask |= (1<<8);
-
-//10
-    if(mav_fence_status == FENCE_BREACH_BOUNDARY)
-        wmask |= (1<<9);
-  }
-#endif
-
+// 8
+	if (sets.vibe_treshold > 0 
+		&& (vibration[0] >= sets.vibe_treshold || vibration[1] >= sets.vibe_treshold || vibration[2] >= sets.vibe_treshold))
+		wmask |= (1<<7);
+	
     if(wmask == 0) {
         warning = 0;
     }else {
@@ -970,7 +955,7 @@ const char PROGMEM w4[]="\x42\x61\x74\x74\x65\x72\x79\x20\x4c\x6f\x77\x21"; //Ba
 const char PROGMEM w5[]="\x20\x20\x4c\x6f\x77\x20\x52\x73\x73\x69!";        // Low Rssi!
 const char PROGMEM w6[]="\x48\x69\x67\x68\x20\x56\x53\x70\x65\x65\x64\x21"; //Hi VSpeed!
 const char PROGMEM w7[]="Batt B low!"; 
-const char PROGMEM w8[]="Fence Low!";
+const char PROGMEM w8[]="  Vibration";
 const char PROGMEM w9[]="Fence High!";
 const char PROGMEM w10[]="Fence Far!";
 
@@ -1171,22 +1156,17 @@ static void panBatt_A(point p){
 // Staus  : done
 
 static void panBatt_B(point p){
-    if(is_on(p)) {
-	lflags.battB_is_on=1; // отобразить состояние панели во ФЛАГЕ
-        static float volt=0;
-
-        filter(volt,  osd_vbat_B, get_alt_filter(p) ); // комплиментарный фильтр 1/n.
-    
-        printVolt(volt, is_alt3(p));
-    } else
-        lflags.battB_is_on = ( sets.battBv!=0 ); // включено если есть надобность контроля
+	osd_printi_1(f2i, available_fly_time); 
 }
 
 
 static void panPower(point p){
 	    // calced in func.h
     //osd_printf_1(f3_0f, power);
-	osd_printi_1(f2i, osd_battery_remaining_A);  
+	
+	//osd_print_bat();
+	osd_printi_1(f2i, osd_battery_remaining_A); 
+	osd_percent();	
 }
 
 
@@ -1270,7 +1250,13 @@ static void NOINLINE  print_coord(point p, float *v) {
 
 
 static void panGPS(point p){
-    
+
+	if (seconds - lastGPSSeconds > 10)
+		lastGPSSeconds = seconds;
+
+	if (seconds - lastGPSSeconds > 1)
+		return;
+		
     if(!(*((long *)&osd_pos.lon) || *((long *)&osd_pos.lat))) return; // не выводим координат если нету
 
     byte div = is_alt3(p)?' ':'\xff'; // row or column
@@ -2243,16 +2229,16 @@ static void panMotor(point p) {
     }
 }
 
-static void panVibe(point p) {
-    if(has_sign(p)) osd_print_S(PSTR("  x  y  z\xff"));
-    
-    byte i;
-    for(i=0;i<3;i++)
-        osd_printf_1(f3_0f, vibration[i]);
+static void panVibe(point p) {	
+		if(has_sign(p)) osd_print_S(PSTR("  x  y  z\xff"));
+		
+		byte i;
+		for(i=0;i<3;i++)
+			osd_printf_1(f3_0f, vibration[i]);
 
-    osd_nl();
-    for(i=0;i<3;i++)
-        osd_printi_1(f3i, clipping[i]);
+		osd_nl();
+		for(i=0;i<3;i++)
+			osd_printi_1(f3i, clipping[i]);		
 }
 
 

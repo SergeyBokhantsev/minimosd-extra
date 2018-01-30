@@ -99,6 +99,8 @@ static int16_t      osd_curr_A = 0;                 // Battery A current
 static uint8_t      osd_battery_remaining_A = 0;    // 0 to 100 <=> 0 to 1000
 static uint8_t      osd_battery_remaining_B = 0;    // 0 to 100 <=> 0 to 1000
 
+static uint8_t 		available_fly_time = 0;
+
 float power=0; 
 
 static int8_t       max_battery_reading = 0;    // 0 to 100 <=> 0 to 1000
@@ -175,6 +177,7 @@ static uint16_t     seconds; // это только для panCALLSIGN
 static uint16_t     lastMavSeconds=0;
 static uint32_t     lastMAVBeat = 0;
 
+static uint16_t     lastGPSSeconds=0;
 
 static uint8_t      apm_mav_system = 0;
 static uint8_t      apm_mav_component=0;
