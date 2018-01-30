@@ -232,11 +232,37 @@ next_panel:
 
 }
 
-
 static void setModeChangedMessage()
 {
 	if (osd_mode != prev_osd_mode)
 	{
+		byte old_panel=panelN;
+		
+		// switch screen
+		switch(osd_mode)
+		{	
+			case 0: // STAB
+			case 11: // DRIFT
+				panelN = 1;
+				break;
+		
+			case 3: // AUTO
+				panelN = 2;
+				break;
+		
+			case 6: // RTL
+			case 9: // LAND
+				panelN = 3;
+				break;
+			
+			default: 
+				panelN = 0;
+				break;
+		}
+		
+		if (panelN > sets.n_screens)
+            panelN = 0;
+
 		prev_osd_mode = osd_mode;
 		
 		if (osd_mode == 0  //STAB
@@ -269,6 +295,9 @@ static void setModeChangedMessage()
 			
 				mav_message_start(sizeof(msg)-1, 3); // len, time
 			}
+			
+		if(old_panel != panelN)
+			doScreenSwitch();
 	}
 }
 
